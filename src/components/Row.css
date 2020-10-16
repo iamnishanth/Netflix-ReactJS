@@ -1,6 +1,10 @@
 .row {
-  margin-left: 20px;
   color: white;
+  z-index: 0;
+}
+
+.row__title {
+  margin-left: 20px;
 }
 
 .row__posters {
@@ -19,8 +23,7 @@
   object-fit: contain;
   max-height: 130px;
   min-width: 200px;
-  margin-right: 10px;
-  border-radius: 5px;
+  margin-right: 4px;
   transition: all 400ms;
 }
 
@@ -47,4 +50,120 @@
   z-index: 1;
 }
 
+.content {
+  position: relative;
+  height: 37vw;
+  margin-top: -15px;
+}
+.content__background,
+.content__background__shadow,
+.content__background__image,
+.content__area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.content__background {
+  left: 0;
+  right: 0;
+}
+.content__background__shadow {
+  left: 0;
+  background: #000;
+  width: 30%;
+  z-index: 2;
+}
+.content__background__shadow:before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  background-image: linear-gradient(to right, #000, transparent);
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 275px;
+}
+.content__background__image {
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background-position: center 10%;
+  background-size: cover;
+  z-index: 1;
+}
+.content__area {
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 3;
+}
+.content__area__container {
+  padding: 50px 60px;
+  color: wheat;
+}
+.content__title {
+  font-size: 45px;
+  color: #fff;
+  font-weight: 700;
+}
+.content__description {
+  font-size: 18px;
+  color: #999;
+  margin-top: 20px;
+  max-width: 500px;
+}
 
+.row__button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  margin-top: 10px;
+  border-radius: 0.2vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #ef0914;
+}
+
+.mylist {
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+.row__button:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .content {
+    height: 250px;
+    width: 100%;
+  }
+
+  .content__area__container {
+    padding: 30px 15px;
+    width: 50%;
+  }
+
+  .content__title {
+    font-size: 20px;
+  }
+  .content__description {
+    font-size: 10px;
+  }
+
+  .row__button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 10px;
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+}
